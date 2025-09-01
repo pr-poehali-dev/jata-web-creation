@@ -6,9 +6,23 @@ import Icon from "@/components/ui/icon";
 
 export default function Index() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Underwater Background */}
+      <div className="fixed inset-0 z-0">
+        <div className="absolute inset-0 bg-[url('/img/4db42642-8410-4413-bc71-3ee56ba1b76e.jpg')] bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/20 via-teal-400/30 to-blue-600/40"></div>
+        <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-cyan-300/10 to-transparent"></div>
+        {/* Floating bubbles */}
+        <div className="absolute top-10 left-10 w-4 h-4 bg-white/30 rounded-full animate-bounce"></div>
+        <div className="absolute top-32 right-20 w-6 h-6 bg-white/20 rounded-full animate-bounce delay-300"></div>
+        <div className="absolute bottom-40 left-1/4 w-3 h-3 bg-cyan-300/40 rounded-full animate-bounce delay-500"></div>
+        <div className="absolute top-1/2 right-1/3 w-5 h-5 bg-teal-300/30 rounded-full animate-bounce delay-700"></div>
+      </div>
+      
+      {/* Content overlay */}
+      <div className="relative z-10 min-h-screen bg-white/80 backdrop-blur-sm">
       {/* Navigation */}
-      <nav className="bg-accent/5 border-b border-border">
+      <nav className="bg-white/70 backdrop-blur-md border-b border-gray-300/30">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
@@ -293,6 +307,7 @@ export default function Index() {
           </p>
         </div>
       </footer>
+      </div>
     </div>
   );
 }
